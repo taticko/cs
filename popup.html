@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo Navigator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 320px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .selection-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .selection-group h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .selection-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .selection-group input {
+            margin-right: 10px;
+        }
+
+        .selection-group .all-option {
+            font-weight: bold;
+            color: #000;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .clear-button {
+            position: absolute;
+            top: 35px;
+            right: -10px;
+            /* Move the button a bit more to the right */
+            background-color: #855ae0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 3px 5px;
+            /* Reduce horizontal padding to make the button narrower */
+            cursor: pointer;
+            font-size: 12px;
+            width: 35%;
+        }
+
+        .clear-button:hover {
+            background-color: #f44336;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 70px;
+            /* Adjust the width as needed */
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="icons/cs_logo.png" alt="Logo" class="logo">
+    <h1> CS Demo Navigator</h1>
+    <div class="selection-group">
+        <h3>Select Demo Type</h3>
+        <button class="clear-button" id="clearDemoType">Clear</button>
+        <label class="all-option"><input type="checkbox" id="allDemoType"> All</label>
+        <label><input type="checkbox" class="demoType" value="DXA"> DXA</label>
+        <label><input type="checkbox" class="demoType" value="DEM"> DEM</label>
+        <label><input type="checkbox" class="demoType" value="PA"> PA</label>
+    </div>
+
+    <div class="selection-group">
+        <h3>Select Vertical</h3>
+        <button class="clear-button" id="clearVerticalType">Clear</button>
+        <label class="all-option"><input type="checkbox" id="allVerticalType"> All</label>
+        <label><input type="checkbox" class="verticalType" value="Retail"> Retail</label>
+        <label><input type="checkbox" class="verticalType" value="Banking"> Banking (WIP) </label>
+        <label><input type="checkbox" class="verticalType" value="Lead Generation"> Lead Generation (Not Available Yet)</label>
+    </div>
+
+    <div class="selection-group">
+        <h3>Select Feature</h3>
+        <button class="clear-button" id="clearFeatureType">Clear</button>
+        <label class="all-option"><input type="checkbox" id="allFeatureType"> All</label>
+        <label><input type="checkbox" class="featureType" value="cstore_demo_site"> Cstore Demo Site</label>
+        <label><input type="checkbox" class="featureType" value="main_dashboard"> Main Dashboard</label>
+        <label><input type="checkbox" class="featureType" value="single_zoning"> Single Zoning</label>
+        <label><input type="checkbox" class="featureType" value="compare_zoning"> Compare Zoning</label>
+        <label><input type="checkbox" class="featureType" value="form_analysis"> Form Analysis</label>
+        <label><input type="checkbox" class="featureType" value="single_journey"> Single Journey</label>
+        <label><input type="checkbox" class="featureType" value="compare_journey_ab_test"> Compare Journey AB
+            Test</label>
+        <label><input type="checkbox" class="featureType" value="impact_quantification"> Impact Quantification</label>
+        <label><input type="checkbox" class="featureType" value="session_replay_api_error"> Session Replay API
+            Error</label>
+        <label><input type="checkbox" class="featureType" value="error_module_checkout_page"> Error Module Checkout
+            Page</label>
+        <label><input type="checkbox" class="featureType" value="workspace_ecomm"> Workspace Ecomm</label>
+        <label><input type="checkbox" class="featureType" value="speed_analysis_cstore"> Speed Analysis Cstore</label>
+        <label><input type="checkbox" class="featureType" value="live_data"> Heap Live Data</label>
+        <label><input type="checkbox" class="featureType" value="ecomm_dash_atlas"> Ecommerce Dashboard AtlasPetCompany</label>
+    </div>
+
+    <button id="startDemo">Start Demo</button>
+    <script src="popup.js"></script>
+</body>
+
+</html>
