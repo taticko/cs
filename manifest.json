@@ -19,11 +19,5 @@
     "16": "icons/cs_logo.png",
     "48": "icons/cs_logo.png",
     "128": "icons/cs_logo.png"
-  },
-  "background": {
-    "service_worker": "popup.js"
-  },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self' https://raw.githubusercontent.com; object-src 'self'"
   }
 }
