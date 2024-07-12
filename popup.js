@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.text();
         })
         .then(data => {
-            document.getElementById('content').innerHTML = data;
+            document.getElementById('content').insertAdjacentHTML('beforeend', data);
             addEventListeners();
         })
         .catch(error => {
