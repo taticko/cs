@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch HTML content from GitHub repository
-    fetch('https://github.com/taticko/cs/blob/demoMe/popup.html')
+    fetch('https://raw.githubusercontent.com/taticko/cs/demoMe/popup.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
