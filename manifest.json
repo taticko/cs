@@ -2,15 +2,28 @@
   "manifest_version": 3,
   "name": "Demo Navigator",
   "version": "1.0",
-  "description": "Chrome Extension for navigating demo links",
+  "description": "Navigate through demo links based on selected criteria.",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/cs_logo.png",
+      "48": "icons/cs_logo.png",
+      "128": "icons/cs_logo.png"
+    }
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "icons": {
-   
+    "16": "icons/cs_logo.png",
+    "48": "icons/cs_logo.png",
+    "128": "icons/cs_logo.png"
+  },
+  "background": {
+    "service_worker": "popup.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://raw.githubusercontent.com; object-src 'self'"
+  }
+}
