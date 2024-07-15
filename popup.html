@@ -81,12 +81,46 @@
             height: auto;
         }
 
+        .edit-button {
+            position: absolute;
+            top: 10px;
+            right: 90px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .edit-button:hover {
+            background-color: #007bb5;
+        }
+
+        .save-button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 3px 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .save-button:hover {
+            background-color: #e67e22;
+        }
+
         .link-row {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
         }
 
         .link-row input {
-            width: calc(100% - 80px);
+            flex-grow: 1;
             margin-right: 10px;
         }
 
@@ -97,6 +131,7 @@
 </head>
 <body>
     <img src="icons/cs_logo.png" alt="Logo" class="logo">
+    <button class="edit-button" id="editModeButton">Edit</button>
     <div id="content">
         <h1>CS Demo Navigator</h1>
         <div class="selection-group">
