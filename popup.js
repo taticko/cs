@@ -1,3 +1,5 @@
+let editMode = false;
+
 document.addEventListener('DOMContentLoaded', () => {
     addEventListeners();
 
@@ -68,6 +70,49 @@ function addEventListeners() {
         document.getElementById('allFeatureType').checked = false;
         document.querySelectorAll('.featureType').forEach(el => el.checked = false);
     });
+
+    document.getElementById('editModeButton').addEventListener('click', () => {
+        toggleEditMode();
+    });
+}
+
+function toggleEditMode() {
+    editMode = !editMode;
+    const editButton = document.getElementById('editModeButton');
+    editButton.textContent = editMode ? 'Done' : 'Edit';
+    document.querySelectorAll('.selection-group label').forEach(label => {
+        if (editMode) {
+            const saveButton = document.createElement('button');
+            saveButton.className = 'save-button';
+            saveButton.textContent = 'Save';
+            saveButton.addEventListener('click', () => saveLink(label));
+            label.appendChild(saveButton);
+        } else {
+            const saveButton = label.querySelector('.save-button');
+            if (saveButton) {
+                saveButton.remove();
+            }
+        }
+    });
+}
+
+function saveLink(label) {
+    const currentTabUrl = document.getElementById('currentTabUrl').textContent;
+    if (confirm('This will update the link. This change is irreversible. Do you want to proceed?')) {
+        const demoType = label.querySelector('input').value;
+        const verticalType = label.querySelector('input').value;
+        const featureType = label.querySelector('input').value;
+        
+        let links = getLinks();
+        const linkToUpdate = links.find(link => link.demo === demoType && link.vertical === verticalType && link.feature === featureType);
+        
+        if (linkToUpdate) {
+            linkToUpdate.url = currentTabUrl;
+            alert('Link updated successfully.');
+        } else {
+            alert('No matching link found to update.');
+        }
+    }
 }
 
 function getLinks() {
